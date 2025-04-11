@@ -9,6 +9,12 @@ app = Flask(__name__) ## Apenas para o flask se organizar
 @app.route("/") # criação da rota principal, por padrão ela vem com método 
 
 def ola_mundo(): # função que aparece ao entrar na página
+    titulo = "Gestão de Usuários"
+    usuarios = [
+        {"nome":"João", "membro_ativo": True},
+        {"nome":"Lucas", "membro_ativo": False},
+        {"nome":"Jorge", "membro_ativo": False}
+    ]
     return render_template('index.html')
 
 @app.route("/sobre")
