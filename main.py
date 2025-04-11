@@ -15,7 +15,7 @@ def ola_mundo(): # função que aparece ao entrar na página
         {"nome":"Lucas", "membro_ativo": False},
         {"nome":"Jorge", "membro_ativo": False}
     ]
-    return render_template('index.html')
+    return render_template('index.html', titulo = titulo, usuarios = usuarios)
 
 @app.route("/sobre")
 
