@@ -10,4 +10,4 @@ app.register_blueprint(home_route)
 # rotas
 
 # execução
-app.run(debug = True) ## Para o Flask entender que estamos no modo de desenvolvedor; a porta padrão irá ser a 5000
+app.run(debug = False) ## Para o Flask entender que estamos no modo de desenvolvedor; a porta padrão irá ser a 5000
