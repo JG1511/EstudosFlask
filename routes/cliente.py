@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template
+from database.cliente import CLIENTE
 
 cliente_route = Blueprint('cliente',__name__)
 
@@ -18,7 +19,7 @@ Base para criação das rotas de cliente
 
 @cliente_route.route('/')
 def lista_clientes():
-    return render_template('lista_cliente')
+    return render_template('lista_cliente', cliente = CLIENTE)
 
 
 @cliente_route.route('/', methods = ['POST'])
