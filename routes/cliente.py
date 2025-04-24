@@ -19,7 +19,7 @@ Base para criação das rotas de cliente
 
 @cliente_route.route('/')
 def lista_clientes():
-    return render_template('lista_cliente', cliente = CLIENTE)
+    return render_template('lista_cliente', clientes = CLIENTE)
 
 
 @cliente_route.route('/', methods = ['POST'])
@@ -30,18 +30,18 @@ def inserir_clientes():
 def form_clientes():
     pass
 
-@cliente_route.route('/<int: cliente_id>')
+@cliente_route.route('/<int:cliente_id>')
 def detalhe_clientes():
     pass
 
-@cliente_route.route('/<int: cliente_id>/edit')
+@cliente_route.route('/<int:cliente_id>/edit')
 def form_editar_clientes():
     pass
 
-@cliente_route.route('/<int: cliente_id>/update', methods = ['PUT'])
+@cliente_route.route('/<int:cliente_id>/update', methods = ['PUT'])
 def atualizar_clientes():
     pass
 
-@cliente_route.route('/<int: cliente_id>/delete', method = ['DELETE'])
+@cliente_route.route('/<int:cliente_id>/delete', methods = ['DELETE'])
 def deletar_clientes():
     pass

@@ -8,8 +8,8 @@ from routes.cliente import cliente_route
 app = Flask(__name__) ## Apenas para o flask se organizar
 
 app.register_blueprint(home_route)
-app.register_blueprint(cliente_route,url_prefix = '/clientes') # esta url_prefix, já deixa "fixo" /clientes para acessar as coisas de clientes
+app.register_blueprint(cliente_route,url_prefix ='/clientes') # esta url_prefix, já deixa "fixo" /clientes para acessar as coisas de clientes
 # rotas
 
 # execução
-app.run(debug = False) ## Para o Flask entender que estamos no modo de desenvolvedor; a porta padrão irá ser a 5000
+app.run(debug = True) ## Para o Flask entender que estamos no modo de desenvolvedor; a porta padrão irá ser a 5000
