@@ -32,3 +32,15 @@ def form_clientes():
 @cliente_route.route('/<int: cliente_id>')
 def detalhe_clientes():
     pass
+
+@cliente_route.route('/<int: cliente_id>/edit')
+def form_editar_clientes():
+    pass
+
+@cliente_route.route('/<int: cliente_id>/update', methods = ['PUT'])
+def atualizar_clientes():
+    pass
+
+@cliente_route.route('/<int: cliente_id>/delete', method = ['DELETE'])
+def deletar_clientes():
+    pass
