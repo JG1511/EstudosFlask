@@ -19,7 +19,7 @@ Base para criação das rotas de cliente
 
 @cliente_route.route('/')
 def lista_clientes():
-    return render_template('lista_cliente', clientes = CLIENTE)
+    return render_template('lista_cliente.html', clientes = CLIENTE)
 
 
 @cliente_route.route('/', methods = ['POST'])
