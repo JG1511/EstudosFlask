@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
 from database.cliente import CLIENTE
 
 cliente_route = Blueprint('cliente',__name__)
@@ -24,11 +24,20 @@ def lista_clientes():
 
 @cliente_route.route('/', methods = ['POST'])
 def inserir_clientes():
-    pass
+    
+    data = request.json ## vai receber a requisição do front-end
+
+    novo_cliente = {
+        "id" : len(CLIENTE) + 1, # nesse caso, irá pegar o tamanho da lista/ID e adicionar + 1
+        "nome" : data['name'],
+        "emaol" : data['email']
+    }
+
+    CLIENTE.append(novo_cliente)# Adiciona o novo cliente na lista   
 
 @cliente_route.route('/new')
 def form_clientes():
-    pass
+    return render_template('form_cliente.html')
 
 @cliente_route.route('/<int:cliente_id>')
 def detalhe_clientes():
