@@ -30,7 +30,7 @@ def inserir_clientes():
     novo_cliente = {
         "id" : len(CLIENTE) + 1, # nesse caso, irá pegar o tamanho da lista/ID e adicionar + 1
         "nome" : data['nome'],
-        "emaol" : data['email']
+        "email" : data['email']
     }
 
     CLIENTE.append(novo_cliente)# Adiciona o novo cliente na lista
