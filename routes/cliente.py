@@ -29,11 +29,13 @@ def inserir_clientes():
 
     novo_cliente = {
         "id" : len(CLIENTE) + 1, # nesse caso, irá pegar o tamanho da lista/ID e adicionar + 1
-        "nome" : data['name'],
+        "nome" : data['nome'],
         "emaol" : data['email']
     }
 
-    CLIENTE.append(novo_cliente)# Adiciona o novo cliente na lista   
+    CLIENTE.append(novo_cliente)# Adiciona o novo cliente na lista
+
+    return render_template('item_cliente.html', cliente = novo_cliente)
 
 @cliente_route.route('/new')
 def form_clientes():
