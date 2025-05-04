@@ -47,13 +47,32 @@ def detalhe_clientes(cliente_id):
 
 @cliente_route.route('/<int:cliente_id>/edit')
 def form_editar_clientes(cliente_id):
-    pass
+
+    cliente = None
+
+    for c in CLIENTE:
+        if c['id'] == cliente_id:
+            cliente = c
+
+    return render_template('form_cliente.html', cliente = cliente)       
 
 @cliente_route.route('/<int:cliente_id>/update', methods = ['PUT'])
 def atualizar_clientes(cliente_id):
-    pass
+    
+    cliente_editado = None
+
+    data = request.json
+    
+    for c in CLIENTE:
+        if c['id'] == cliente_id:
+            c['nome'] = data['nome']
+            c['email'] = data['email']
+
+            cliente_editado = c
+    return render_template('item_cliente.html', cliente = cliente_editado)
 
 @cliente_route.route('/<int:cliente_id>/delete', methods = ['DELETE'])
 def deletar_clientes(cliente_id):
     global CLIENTE # para poder modificar 
     CLIENTE = [ cliente for cliente in CLIENTE if cliente['id'] != cliente_id]
+    return {'deleted': 'ok'}
